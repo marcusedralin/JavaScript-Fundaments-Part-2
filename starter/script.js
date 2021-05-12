@@ -16,36 +16,36 @@
 
 // Functions //
 
-// A function can hold one or more complete lines of code that you can reuse over and over again
+// // A function can hold one or more complete lines of code that you can reuse over and over again
 
-function logger() {
-    console.log('My name is Marcus');
-}
+// function logger() {
+//     console.log('My name is Marcus');
+// }
 
-// We needed to reuse this logger later in our code
+// // We needed to reuse this logger later in our code
 
-logger(); // My name is Marcus
-logger(); // My name is Marcus
-logger(); // My name is Marcus
+// logger(); // My name is Marcus
+// logger(); // My name is Marcus
+// logger(); // My name is Marcus
 
 // Now we can invoke/run/call the function via its name followed by parens
 // Usually when we write functions we pass data into a function and a function can return data which then we can use for something else in our app
 // Functions are like machines
 // Likened to a food processor you put something in the function it does something to the data and returns it into a different form
 
-function fruitProcessor(apples, oranges) {
-    console.log(apples, oranges);
-    const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
-    return juice;
-}
+// function fruitProcessor(apples, oranges) {
+//     console.log(apples, oranges);
+//     const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+//     return juice;
+// }
 
-fruitProcessor(4, 3); // 4 3
+// fruitProcessor(4, 3); // 4 3
 
 // Parameters are like variables that are specifc only to this function that are defined when you call the function
 // These represent the input data
 
-const appleJuice = fruitProcessor(6, 0);
-console.log(appleJuice);
+// const appleJuice = fruitProcessor(6, 0);
+// console.log(appleJuice);
 
 // The fruitProccessor function is taking in 2 params of numbers then logging those to the console: 4, 3 then 6, 4. 
 
@@ -55,10 +55,47 @@ console.log(appleJuice);
 
 // Lastly we log the appleJuice variable to the console which outputs the returned value of juice based on the arguments inputed.
 
-const appleOrangeJuice = fruitProcessor(2, 4);
-console.log(appleOrangeJuice);
+// const appleOrangeJuice = fruitProcessor(2, 4);
+// console.log(appleOrangeJuice);
 
 // Not all functions need to return anything or have parameters
 // DRY Don't Repeat Yourself
 // Use functions to do so
 
+// Function Declarations VS Expressions //
+
+function calcAge1(birthYear) {
+    return 2021 - birthYear;
+}
+// Function Declaration
+
+
+// In this calcAge1 function we are gonna expect a birthYear (number) then in that code block create a variable age and set it to equal the current year minus that parameter birthYear.
+// Lastly we return the result of age after that expression
+
+const age1 = calcAge1(1990);
+console.log(age1); //31
+
+// Arguments and Parameters are not the same
+// Parameters are the "placeholder" for the variable we will input later
+// Arguments are the actual "input" that is ran in the function.
+
+const calcAge2 = function (birthYear) {
+    return 2302 - birthYear;
+}
+// Function Expression
+
+// It has a value
+// We use that value and store it within calcAge2
+
+const age2 = calcAge2(1990);
+console.log(age1, age2)
+
+// Both of these functions work in the same way
+// A Function is not a type - it is a value - it can be stored in a variable
+// What is the difference?
+// You can call a function declaration before it is defined in the code.
+// You cannot call an expression before it is initialized
+
+// The fact that a function expression is stored in a variable means you can't call a function before it runs
+// A declaration is like stating how a function works and using it as a tool. Hence you can always use your tool as long as it is defined.
