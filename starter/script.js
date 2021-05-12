@@ -138,21 +138,51 @@
 
 // Functions Calling other Functions //
 
-function dicer(fruit) {
-    return fruit * 4;
-}
+// function dicer(fruit) {
+//     return fruit * 4;
+// }
 
-function fruitProcessor(apples, oranges) {
-    const applePieces = dicer(apples);
-    const orangePieces = dicer(oranges);
+// function fruitProcessor(apples, oranges) {
+//     const applePieces = dicer(apples);
+//     const orangePieces = dicer(oranges);
 
-    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
-    return juice;
-}
+//     const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
+//     return juice;
+// }
 
-const fruit = fruitProcessor(2, 3);
-console.log(fruit);
+// const fruit = fruitProcessor(2, 3);
+// console.log(fruit);
 
 // So here we declare the dicer() function that will take in the amount of fruit and multiply it by 4
 // Next our fruit processor takes in 2 parameters (numbers) and creates 2 const applePieces and orangePieces which invoke the dicer() function above whos arguments are defined by the arguments in fruitProcessor.
 // Now the juice variable is calling the applePeices variable and orangePieces variable
+
+const calcAge = function (birthYear) {
+    return 2037 - birthYear;
+}
+
+const yearsUntilRetired = function (birthYear, firstName) {
+    const age = calcAge(birthYear)
+    const retirement = 65 - age;
+
+    if (retirement > 0) {
+        console.log(`${firstName} can retire in ${retirement} years.`);
+        return retirement;
+    } else {
+        console.log(`${firstName} has already retired.`);
+        return -1;
+    }
+    // return `${firstName} retires in ${retirement} years.`;
+}
+
+console.log(yearsUntilRetired(1991, 'Marcus'));
+console.log(yearsUntilRetired(1932, 'Nina'));
+
+// Again we are invoking a function within another
+// the yearsUntilRetired takes in a birthYear(num) and firstName(string)
+// creates a variable that stores the value of the calcAge(birthYear) function
+// that birthYear argument recieves the same birthYear argument in the yearsUntilRetired function
+// the calcAge function takes in a birthYear param but is defined asynchonously by the yearsUntilRetired code block
+// we invoke the calcAge() inside yearsUntilRetired to define what the variable age is
+// our if block is checking to see if the retirement value is higher than 0 or less
+// That deteremines whether or not the birthYear and firstName are retired or not
