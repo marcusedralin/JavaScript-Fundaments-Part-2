@@ -64,32 +64,32 @@
 
 // Function Declarations VS Expressions //
 
-function calcAge1(birthYear) {
-    return 2021 - birthYear;
-}
+// function calcAge1(birthYear) {
+//     return 2021 - birthYear;
+// }
 // Function Declaration
 
 
 // In this calcAge1 function we are gonna expect a birthYear (number) then in that code block create a variable age and set it to equal the current year minus that parameter birthYear.
 // Lastly we return the result of age after that expression
 
-const age1 = calcAge1(1990);
-console.log(age1); //31
+// const age1 = calcAge1(1990);
+// console.log(age1); //31
 
 // Arguments and Parameters are not the same
 // Parameters are the "placeholder" for the variable we will input later
 // Arguments are the actual "input" that is ran in the function.
 
-const calcAge2 = function (birthYear) {
-    return 2302 - birthYear;
-}
+// const calcAge2 = function (birthYear) {
+//     return 2302 - birthYear;
+// }
 // Function Expression
 
 // It has a value
 // We use that value and store it within calcAge2
 
-const age2 = calcAge2(1990);
-console.log(age1, age2)
+// const age2 = calcAge2(1990);
+// console.log(age1, age2)
 
 // Both of these functions work in the same way
 // A Function is not a type - it is a value - it can be stored in a variable
@@ -99,3 +99,38 @@ console.log(age1, age2)
 
 // The fact that a function expression is stored in a variable means you can't call a function before it runs
 // A declaration is like stating how a function works and using it as a tool. Hence you can always use your tool as long as it is defined.
+
+// Arrow Functions //
+
+const calcAge2 = function (birthYear) {
+    return 2021 - birthYear;
+}
+
+const calcAge3 = birthYear => 2021 - birthYear;
+
+// It still is a function expression
+// Easier and faster to write
+// Has an implicit return
+// Less code
+// Good for one liner functions
+
+const age3 = calcAge3(1988);
+console.log(age3);
+
+// When you have only one param and one line of code you don't need parens and curly brackets
+
+const yearsUntilRetired = (birthYear, firstName) => {
+    const age = 2021 - birthYear;
+    const retirement = 65 - age;
+    // return retirement;
+    return `${firstName} retires in ${retirement} years.`;
+}
+
+console.log(yearsUntilRetired(1991, 'Johnny'));
+console.log(yearsUntilRetired(1967, 'Janet'));
+
+// Here we have a function expression stored in yearsUntilRetired that takes in 2 parameters, a birthYear and firstName.
+// We define their age by subtracting a year - the argument birthYear
+// We define retirement by subtracting a number of years - the previous age const
+// Lastly we return a string template literal of the firstName argument  retiring in the const retirement values years.
+
