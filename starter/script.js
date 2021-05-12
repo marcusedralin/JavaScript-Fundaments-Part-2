@@ -102,11 +102,11 @@
 
 // Arrow Functions //
 
-const calcAge2 = function (birthYear) {
-    return 2021 - birthYear;
-}
+// const calcAge2 = function (birthYear) {
+//     return 2021 - birthYear;
+// }
 
-const calcAge3 = birthYear => 2021 - birthYear;
+// const calcAge3 = birthYear => 2021 - birthYear;
 
 // It still is a function expression
 // Easier and faster to write
@@ -114,23 +114,45 @@ const calcAge3 = birthYear => 2021 - birthYear;
 // Less code
 // Good for one liner functions
 
-const age3 = calcAge3(1988);
-console.log(age3);
+// const age3 = calcAge3(1988);
+// console.log(age3);
 
 // When you have only one param and one line of code you don't need parens and curly brackets
 
-const yearsUntilRetired = (birthYear, firstName) => {
-    const age = 2021 - birthYear;
-    const retirement = 65 - age;
-    // return retirement;
-    return `${firstName} retires in ${retirement} years.`;
-}
+// const yearsUntilRetired = (birthYear, firstName) => {
+//     const age = 2021 - birthYear;
+//     const retirement = 65 - age;
+//     // return retirement;
+//     return `${firstName} retires in ${retirement} years.`;
+// }
 
-console.log(yearsUntilRetired(1991, 'Johnny'));
-console.log(yearsUntilRetired(1967, 'Janet'));
+// console.log(yearsUntilRetired(1991, 'Johnny'));
+// console.log(yearsUntilRetired(1967, 'Janet'));
 
 // Here we have a function expression stored in yearsUntilRetired that takes in 2 parameters, a birthYear and firstName.
 // We define their age by subtracting a year - the argument birthYear
 // We define retirement by subtracting a number of years - the previous age const
 // Lastly we return a string template literal of the firstName argument  retiring in the const retirement values years.
 
+// The differentiation between using an arrow function to a standard function is the fact that arrow function do not have access to the "this" keyword
+
+// Functions Calling other Functions //
+
+function dicer(fruit) {
+    return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+    const applePieces = dicer(apples);
+    const orangePieces = dicer(oranges);
+
+    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
+    return juice;
+}
+
+const fruit = fruitProcessor(2, 3);
+console.log(fruit);
+
+// So here we declare the dicer() function that will take in the amount of fruit and multiply it by 4
+// Next our fruit processor takes in 2 parameters (numbers) and creates 2 const applePieces and orangePieces which invoke the dicer() function above whos arguments are defined by the arguments in fruitProcessor.
+// Now the juice variable is calling the applePeices variable and orangePieces variable
