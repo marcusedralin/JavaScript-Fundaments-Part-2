@@ -157,26 +157,26 @@
 // Next our fruit processor takes in 2 parameters (numbers) and creates 2 const applePieces and orangePieces which invoke the dicer() function above whos arguments are defined by the arguments in fruitProcessor.
 // Now the juice variable is calling the applePeices variable and orangePieces variable
 
-const calcAge = function (birthYear) {
-    return 2037 - birthYear;
-}
+// const calcAge = function (birthYear) {
+//     return 2037 - birthYear;
+// }
 
-const yearsUntilRetired = function (birthYear, firstName) {
-    const age = calcAge(birthYear)
-    const retirement = 65 - age;
+// const yearsUntilRetired = function (birthYear, firstName) {
+//     const age = calcAge(birthYear)
+//     const retirement = 65 - age;
 
-    if (retirement > 0) {
-        console.log(`${firstName} can retire in ${retirement} years.`);
-        return retirement;
-    } else {
-        console.log(`${firstName} has already retired.`);
-        return -1;
-    }
-    // return `${firstName} retires in ${retirement} years.`;
-}
+//     if (retirement > 0) {
+//         console.log(`${firstName} can retire in ${retirement} years.`);
+//         return retirement;
+//     } else {
+//         console.log(`${firstName} has already retired.`);
+//         return -1;
+//     }
+//     // return `${firstName} retires in ${retirement} years.`;
+// }
 
-console.log(yearsUntilRetired(1991, 'Marcus'));
-console.log(yearsUntilRetired(1932, 'Nina'));
+// console.log(yearsUntilRetired(1991, 'Marcus'));
+// console.log(yearsUntilRetired(1932, 'Nina'));
 
 // Again we are invoking a function within another
 // the yearsUntilRetired takes in a birthYear(num) and firstName(string)
@@ -186,3 +186,127 @@ console.log(yearsUntilRetired(1932, 'Nina'));
 // we invoke the calcAge() inside yearsUntilRetired to define what the variable age is
 // our if block is checking to see if the retirement value is higher than 0 or less
 // That deteremines whether or not the birthYear and firstName are retired or not
+
+// Arrays //
+
+// const friend1 = 'Steve';
+// const friend2 = 'Bob';
+// const friend3 = 'Joseph';
+
+// // Arrays are like big containers from which we can throw variables and then reference them
+
+// const friends = ['Mary', 'Celeste', 'Amber'];
+// console.log(friends);
+
+// console.log(friends[0]); // Mary
+
+// const years = new Array(1990, 3233, 2008, 2021);
+
+// console.log(friends.length);
+// console.log(friends[friends.length - 1]);
+
+// // You access array values based on their indexed value starting from 0
+// // Using the .length method you can retrieve the length of the whole array
+// // to acces the last value you use the name of the array - then the indexed value - this is dynamically defined by stating name of the array.length - 1
+// //
+
+// friends[2] = 'Amanda';
+// console.log(friends);
+
+// // You can mutate an array by changing the indexed value of the array
+// // Only primitive values are immutable
+// // We cannot change the entire array as it is primitive
+// // friends = ['john', etc]
+
+// const firstName = 'Marcus'
+// const marcus = [firstName, 'Edralin', 2021 - 1990, 'developer', friends];
+// console.log(marcus);
+
+// // You can even store expressions and other arrays within an array
+
+// const calcAge = function (birthYear) {
+//     return 2021 - birthYear;
+// }
+
+// const bYears = [1990, 2010, 1994, 1936, 1988];
+
+// const age1 = console.log(calcAge(bYears[0]));
+// const age2 = console.log(calcAge(bYears[1]));
+// const age3 = console.log(calcAge(bYears[2]));
+// const age4 = console.log(calcAge(bYears[bYears.length - 1]));
+
+// const ages = [calcAge(bYears[0]), calcAge(bYears[1]), calcAge(bYears[bYears.length - 1])]
+// console.log(ages);
+
+// Basic Array Operations (Methods) //
+
+// JS has some built in functions you can apply directly on to any array
+
+// const friends = ['Mary', 'Celeste', 'Amber'];
+// const newLength = friends.push('Briana'); // shows the number of elements after the push
+// console.log(friends);
+// console.log(newLength);
+// // The push array method adds whatever you push into the end of the array
+
+// friends.unshift('Derrick');
+// console.log(friends);
+// // The unshift array method adds whatever you unShift into the beginning of the array
+
+// friends.pop();
+// const popped = friends.pop(); // saves the value of what you removed
+// console.log(popped);
+// console.log(friends);
+// // The pop array method removes the last element from the array
+
+// friends.shift();
+// console.log(friends)
+// // The shift array method removes the first element from the array
+
+// console.log(friends.indexOf('Mary'));
+// console.log(friends.indexOf('Bob')); // Returns -1 if the element is not there
+// // The indexOf array method returns the value of the value you enter from the array
+
+// console.log(friends.includes('Celeste'));
+// // The includes array method it returns true or false if the value is or isn't there
+
+// friends.push(23);
+// console.log(friends.includes('Mary')); //true
+// console.log(friends.includes('Bob')); // false
+// console.log(friends.includes('23')); // false because 23 isn't a string - uses STRICT equality
+// console.log(friends.includes(23)); // true 
+
+// if (friends.includes('Mary')) {
+//     console.log('You have a friend named Mary.');
+// }
+
+// You can use the includes method to write conditionals
+// includes() returns a boolean
+
+// Intro to Objects //
+
+const marcusArray = [
+    'Marcus',
+    'Edralin',
+    2021 - 1990,
+    'developer',
+    ['See', 'Sam', 'Michale']
+];
+
+// You can only reference a value of an array by their order number
+// In an Object you can use key value pairs to call data from a stucture
+
+const marcus = {
+    firstName: 'Marcus',
+    lastName: 'Edralin',
+    age: 2021 - 1990,
+    job: 'developer',
+    friends: ['Sam', 'Michael', 'See']
+}
+
+// This object has 5 properties that have their own respective values
+// Object Literal syntax - we literally write down whats in the object
+// In objects the order doesn't matter when you retrieve the data
+
+// Arrays- structured data
+// Objects - unstructured data
+
