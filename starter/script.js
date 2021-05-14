@@ -284,24 +284,24 @@
 
 // Intro to Objects //
 
-const marcusArray = [
-    'Marcus',
-    'Edralin',
-    2021 - 1990,
-    'developer',
-    ['See', 'Sam', 'Michale']
-];
+// const marcusArray = [
+//     'Marcus',
+//     'Edralin',
+//     2021 - 1990,
+//     'developer',
+//     ['See', 'Sam', 'Michale']
+// ];
 
-// You can only reference a value of an array by their order number
-// In an Object you can use key value pairs to call data from a stucture
+// // You can only reference a value of an array by their order number
+// // In an Object you can use key value pairs to call data from a stucture
 
-const marcus = {
-    firstName: 'Marcus',
-    lastName: 'Edralin',
-    age: 2021 - 1990,
-    job: 'developer',
-    friends: ['Sam', 'Michael', 'See']
-}
+// const marcus = {
+//     firstName: 'Marcus',
+//     lastName: 'Edralin',
+//     age: 2021 - 1990,
+//     job: 'developer',
+//     friends: ['Sam', 'Michael', 'See']
+// }
 
 // This object has 5 properties that have their own respective values
 // Object Literal syntax - we literally write down whats in the object
@@ -310,3 +310,95 @@ const marcus = {
 // Arrays- structured data
 // Objects - unstructured data
 
+// Dot vs Bracket Notation //
+
+// const marcus = {
+//     firstName: 'Marcus',
+//     lastName: 'Edralin',
+//     age: 2021 - 1990,
+//     job: 'developer',
+//     friends: ['Sam', 'Michael', 'See']
+// }
+
+// console.log(marcus);
+// // Displays the object and its properties in alphabetical order
+
+// console.log(marcus.lastName);
+// console.log(marcus['lastName']);
+// // To grab a specific property of the object you use call the object.propertyName
+// // Same goes for bracket notation - object['propertyName']
+
+// const nameKey = 'Name';
+// console.log(marcus['first' + nameKey]);
+// console.log(marcus['last' + nameKey]);
+
+// // bracket notation allows you to have an expression when calling the object
+// // This example you define the nameKey variable as the string 'Name' then when we call the firstName property by concatenating the string 'first' with nameKey "Name" so it knows you are asking for the 'firstName' property
+// // this is computed property names
+
+// // console.log(marcus.'last' + nameKey); DOESN'T WORK
+
+// const interestedIn = prompt('What do you want to know about Marcus? Choose between firstName, lastName, age, job, and friends.');
+// // The bracket notation allows for the prompt to dynamically compute the property names value from the marcus object
+
+// if (marcus[interestedIn]) {
+//     console.log(marcus[interestedIn]);
+// } else {
+//     console.log('Wrong request! Choose between firstName, lastName, age, job, and friends.');
+// }
+
+// // The prompt occurs - user inputs one of the 5 mentioned props - after you input the prompt it stores that prompt value in the console.log expression - marcus[userInputFromPrompt] - dynamically returns the property as though you put in marcus[job] - returns 'developer'
+
+// marcus.location = 'Las Vegas';
+// marcus['twitter'] = '@journey_ugf';
+// console.log(marcus);
+
+// // Challenge 
+// // "Marcus has 3 friends and his best friend is called Michael"
+
+// console.log(`${marcus.firstName} has ${marcus.friends.length} friends and his best friend is called ${marcus.friends[1]}`);
+
+// Object Methods //
+
+const marcus = {
+    firstName: 'Marcus',
+    lastName: 'Edralin',
+    birthYear: 1990,
+    job: 'developer',
+    friends: ['Sam', 'Michael', 'See'],
+    hasDriversLicense: true,
+
+    // calcAge: function (birthYear) {
+    //     return 2021 - birthYear;
+    // }
+
+    // calcAge: function () {
+    //     // console.log(this) returns the object this is referring to
+    //     return 2021 - this.birthYear;
+    // }
+
+    calcAge: function () {
+        this.age = 2021 - this.birthYear; // creating the age prop in the marcus object
+        return this.age;
+    },
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()}-year old ${marcus.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} drivers license.`
+    }
+};
+
+// Any function that is attached to an object is a method
+
+console.log(marcus.calcAge());
+// console.log(marcus['calcAge'](1990));
+console.log(marcus.age);
+console.log(marcus.age);
+console.log(marcus.age);
+
+// The "this" keyword is a reference to the object called the method
+// It give a means of dynamically selecting the appropriate object
+
+// Challenge //
+
+// "Marcus is a 46 year old teacher, and he has a driver's license."
+
+console.log(marcus.getSummary());
