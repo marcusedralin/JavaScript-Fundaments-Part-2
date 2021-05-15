@@ -360,45 +360,129 @@
 
 // Object Methods //
 
-const marcus = {
-    firstName: 'Marcus',
-    lastName: 'Edralin',
-    birthYear: 1990,
-    job: 'developer',
-    friends: ['Sam', 'Michael', 'See'],
-    hasDriversLicense: true,
+// const marcus = {
+//     firstName: 'Marcus',
+//     lastName: 'Edralin',
+//     birthYear: 1990,
+//     job: 'developer',
+//     friends: ['Sam', 'Michael', 'See'],
+//     hasDriversLicense: true,
 
-    // calcAge: function (birthYear) {
-    //     return 2021 - birthYear;
-    // }
+//     // calcAge: function (birthYear) {
+//     //     return 2021 - birthYear;
+//     // }
 
-    // calcAge: function () {
-    //     // console.log(this) returns the object this is referring to
-    //     return 2021 - this.birthYear;
-    // }
+//     // calcAge: function () {
+//     //     // console.log(this) returns the object this is referring to
+//     //     return 2021 - this.birthYear;
+//     // }
 
-    calcAge: function () {
-        this.age = 2021 - this.birthYear; // creating the age prop in the marcus object
-        return this.age;
-    },
-    getSummary: function () {
-        return `${this.firstName} is a ${this.calcAge()}-year old ${marcus.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} drivers license.`
-    }
-};
+//     calcAge: function () {
+//         this.age = 2021 - this.birthYear; // creating the age prop in the marcus object
+//         return this.age;
+//     },
+//     getSummary: function () {
+//         return `${this.firstName} is a ${this.calcAge()}-year old ${marcus.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} drivers license.`
+//     }
+// };
 
-// Any function that is attached to an object is a method
+// // Any function that is attached to an object is a method
 
-console.log(marcus.calcAge());
-// console.log(marcus['calcAge'](1990));
-console.log(marcus.age);
-console.log(marcus.age);
-console.log(marcus.age);
+// console.log(marcus.calcAge());
+// // console.log(marcus['calcAge'](1990));
+// console.log(marcus.age);
+// console.log(marcus.age);
+// console.log(marcus.age);
 
-// The "this" keyword is a reference to the object called the method
-// It give a means of dynamically selecting the appropriate object
+// // The "this" keyword is a reference to the object called the method
+// // It give a means of dynamically selecting the appropriate object
 
-// Challenge //
+// // Challenge //
 
-// "Marcus is a 46 year old teacher, and he has a driver's license."
+// // "Marcus is a 46 year old teacher, and he has a driver's license."
 
-console.log(marcus.getSummary());
+// console.log(marcus.getSummary());
+
+// Iteration: the For loop //
+
+// console.log('Lifting Weights rep 1')
+// console.log('Lifting Weights rep 1')
+// console.log('Lifting Weights rep 1')
+// console.log('Lifting Weights rep 1')
+// console.log('Lifting Weights rep 1')
+// console.log('Lifting Weights rep 1')
+// console.log('Lifting Weights rep 1')
+// console.log('Lifting Weights rep 1')
+// console.log('Lifting Weights rep 1')
+// console.log('Lifting Weights rep 1')
+
+// for loop keeps running while the condition is true
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting Weights reptition ${rep}`);
+// }
+
+// This allows us to do something really repetitive
+// You define the start - set the condition - set the iteration
+// Then it will run the code block however many times it remains true
+
+// Looping Arrays, Breaking and Continuing //
+
+const marcusArray = [
+    'Marcus',
+    'Edralin',
+    2021 - 1990,
+    'developer',
+    ['See', 'Sam', 'Michale'],
+    true
+];
+
+// We are gonna use a For loop to loop through this array
+
+// console.log(marcus[0])
+// console.log(marcus[1])
+// console.log(marcus[2])
+// console.log(marcus[3])
+//...
+// marcus[5] does'nt exist
+
+const types = []; // an empty array
+
+for (let i = 0; i < marcusArray.length; i++) {
+    // reading an marcusArray
+    console.log(marcusArray[i], typeof marcusArray[i]);
+    // filling types array
+    // types[i] = typeof marcusArray[i];
+    types.push(typeof marcusArray[i]);
+}
+
+console.log(types);
+
+// Notice this is logging each property of the object
+// i stands for the index number
+// it dynamically loops through the array based on the indexed number
+// then it does the code block each loop
+
+const years = [1992, 2003, 1934, 1979];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2021 - years[i]);
+}
+// We iterate through the years array
+// In each interation we calculated 2021 minus each year value in the years array then we pushed those values to the ages empty array
+console.log(ages);
+
+// continue and break //
+console.log('----ONLY STRINGS----');
+for (let i = 0; i < marcusArray.length; i++) {
+    if (typeof marcusArray[i] !== 'string') continue;
+    // We are using 'continue' to skip anything that doesn't pass the if block
+    console.log(marcusArray[i], typeof marcusArray[i]);
+}
+
+console.log('----BREAK WITH NUMBER----');
+for (let i = 0; i < marcusArray.length; i++) {
+    if (typeof marcusArray[i] === 'number') break;
+    // We are using 'break' to stop once it finds the condition truthy
+    console.log(marcusArray[i], typeof marcusArray[i]);
+}
