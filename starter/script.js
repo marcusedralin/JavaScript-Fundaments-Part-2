@@ -427,62 +427,98 @@
 
 // Looping Arrays, Breaking and Continuing //
 
+// const marcusArray = [
+//     'Marcus',
+//     'Edralin',
+//     2021 - 1990,
+//     'developer',
+//     ['See', 'Sam', 'Michale'],
+//     true
+// ];
+
+// // We are gonna use a For loop to loop through this array
+
+// // console.log(marcus[0])
+// // console.log(marcus[1])
+// // console.log(marcus[2])
+// // console.log(marcus[3])
+// //...
+// // marcus[5] does'nt exist
+
+// const types = []; // an empty array
+
+// for (let i = 0; i < marcusArray.length; i++) {
+//     // reading an marcusArray
+//     console.log(marcusArray[i], typeof marcusArray[i]);
+//     // filling types array
+//     // types[i] = typeof marcusArray[i];
+//     types.push(typeof marcusArray[i]);
+// }
+
+// console.log(types);
+
+// // Notice this is logging each property of the object
+// // i stands for the index number
+// // it dynamically loops through the array based on the indexed number
+// // then it does the code block each loop
+
+// const years = [1992, 2003, 1934, 1979];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//     ages.push(2021 - years[i]);
+// }
+// // We iterate through the years array
+// // In each interation we calculated 2021 minus each year value in the years array then we pushed those values to the ages empty array
+// console.log(ages);
+
+// // continue and break //
+// console.log('----ONLY STRINGS----');
+// for (let i = 0; i < marcusArray.length; i++) {
+//     if (typeof marcusArray[i] !== 'string') continue;
+//     // We are using 'continue' to skip anything that doesn't pass the if block
+//     console.log(marcusArray[i], typeof marcusArray[i]);
+// }
+
+// console.log('----BREAK WITH NUMBER----');
+// for (let i = 0; i < marcusArray.length; i++) {
+//     if (typeof marcusArray[i] === 'number') break;
+//     // We are using 'break' to stop once it finds the condition truthy
+//     console.log(marcusArray[i], typeof marcusArray[i]);
+// }
+
+// Looping Backwards and Loops in Loops //
+
 const marcusArray = [
     'Marcus',
     'Edralin',
     2021 - 1990,
     'developer',
-    ['See', 'Sam', 'Michale'],
-    true
+    ['See', 'Sam', 'Michale']
 ];
 
-// We are gonna use a For loop to loop through this array
+// 0, 1 ..., 4
+// 4, 3 ..., 0
 
-// console.log(marcus[0])
-// console.log(marcus[1])
-// console.log(marcus[2])
-// console.log(marcus[3])
-//...
-// marcus[5] does'nt exist
-
-const types = []; // an empty array
-
-for (let i = 0; i < marcusArray.length; i++) {
-    // reading an marcusArray
-    console.log(marcusArray[i], typeof marcusArray[i]);
-    // filling types array
-    // types[i] = typeof marcusArray[i];
-    types.push(typeof marcusArray[i]);
+for (let i = marcusArray.length - 1; i >= 0; i--) {
+    console.log(i, marcusArray[i]);
 }
 
-console.log(types);
+// We are using the dynamic value of the arrays last value
+// We will stop when the value is greater than or equal to 0
+// Then we choose to decrement rather than increment 
+// This prints the array backwards
 
-// Notice this is logging each property of the object
-// i stands for the index number
-// it dynamically loops through the array based on the indexed number
-// then it does the code block each loop
+for (let exercise = 1; exercise < 4; exercise++) {
+    console.log(`------Starting exercise ${exercise}`);
 
-const years = [1992, 2003, 1934, 1979];
-const ages = [];
-
-for (let i = 0; i < years.length; i++) {
-    ages.push(2021 - years[i]);
-}
-// We iterate through the years array
-// In each interation we calculated 2021 minus each year value in the years array then we pushed those values to the ages empty array
-console.log(ages);
-
-// continue and break //
-console.log('----ONLY STRINGS----');
-for (let i = 0; i < marcusArray.length; i++) {
-    if (typeof marcusArray[i] !== 'string') continue;
-    // We are using 'continue' to skip anything that doesn't pass the if block
-    console.log(marcusArray[i], typeof marcusArray[i]);
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Exercise ${exercise} Lifting weights repetition ${rep}`);
+    }
 }
 
-console.log('----BREAK WITH NUMBER----');
-for (let i = 0; i < marcusArray.length; i++) {
-    if (typeof marcusArray[i] === 'number') break;
-    // We are using 'break' to stop once it finds the condition truthy
-    console.log(marcusArray[i], typeof marcusArray[i]);
-}
+// This is a nested loop
+// Basically the first loop occurs a total of 3 times
+// Within each of the main loop there are 5 iterations
+// Looks like 3 exercises with 5 reps in each set
+
