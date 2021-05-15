@@ -489,36 +489,72 @@
 
 // Looping Backwards and Loops in Loops //
 
-const marcusArray = [
-    'Marcus',
-    'Edralin',
-    2021 - 1990,
-    'developer',
-    ['See', 'Sam', 'Michale']
-];
+// const marcusArray = [
+//     'Marcus',
+//     'Edralin',
+//     2021 - 1990,
+//     'developer',
+//     ['See', 'Sam', 'Michale']
+// ];
 
-// 0, 1 ..., 4
-// 4, 3 ..., 0
+// // 0, 1 ..., 4
+// // 4, 3 ..., 0
 
-for (let i = marcusArray.length - 1; i >= 0; i--) {
-    console.log(i, marcusArray[i]);
-}
+// for (let i = marcusArray.length - 1; i >= 0; i--) {
+//     console.log(i, marcusArray[i]);
+// }
 
-// We are using the dynamic value of the arrays last value
-// We will stop when the value is greater than or equal to 0
-// Then we choose to decrement rather than increment 
-// This prints the array backwards
+// // We are using the dynamic value of the arrays last value
+// // We will stop when the value is greater than or equal to 0
+// // Then we choose to decrement rather than increment 
+// // This prints the array backwards
 
-for (let exercise = 1; exercise < 4; exercise++) {
-    console.log(`------Starting exercise ${exercise}`);
+// for (let exercise = 1; exercise < 4; exercise++) {
+//     console.log(`------Starting exercise ${exercise}`);
 
-    for (let rep = 1; rep < 6; rep++) {
-        console.log(`Exercise ${exercise} Lifting weights repetition ${rep}`);
-    }
-}
+//     for (let rep = 1; rep < 6; rep++) {
+//         console.log(`Exercise ${exercise} Lifting weights repetition ${rep}`);
+//     }
+// }
 
 // This is a nested loop
 // Basically the first loop occurs a total of 3 times
 // Within each of the main loop there are 5 iterations
 // Looks like 3 exercises with 5 reps in each set
+
+// The While Loop //
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`FOR Lifting weights repititon ${rep}`);
+// }
+
+
+let rep = 1;
+while (rep <= 10) {
+    // console.log(`WHILE Lifting weights repititon ${rep}`);
+    rep++
+}
+
+// It is called the while loop because it will run so long as this condition is true
+// The while loop is more versatile
+// It doesn't really need a counter
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+// This generates a random number from 0 - 6 and adds 1
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) {
+        console.log('Loop is about to end...')
+    }
+}
+// This while loop will continue to roll a dice so long as dice is not equal to 6
+// It then logs the number to the console
+// We then changed the value of dice to a NEW random number from 0 - 6
+// The while loop continues to iterate until it rolls 6
+// Whenever you need a loop without a counter the WHILE loop is the tool for the job
+
+
+
 
